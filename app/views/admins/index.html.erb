@@ -1,0 +1,12 @@
+<h1>Me, Myself & I.</h1>
+
+<ul>
+  <% @admins.each do |admin| %>
+  <h3>
+    <li><%= admin.title %></li>
+  </h3>
+  <p>
+    <%= admin.description %>
+  </p>
+  <% end %>
+</ul>
