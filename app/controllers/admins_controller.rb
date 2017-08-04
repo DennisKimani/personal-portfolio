@@ -7,4 +7,8 @@ class AdminsController < ApplicationController
     @admin = Admin.find(params[:id])
     render :show
   end
+  def new
+    @admin = Admin.new
+    render :new
+  end
 end
