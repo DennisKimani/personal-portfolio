@@ -19,6 +19,10 @@ class AdminsController < ApplicationController
       render :new
     end
   end
+  def edit
+    @admin = Admin.edit
+    render :edit
+  end
 
   private
   def admin_params
