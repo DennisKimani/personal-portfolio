@@ -20,7 +20,7 @@ class AdminsController < ApplicationController
     end
   end
   def edit
-    @admin = Admin.edit
+    @admin = Admin.find(params[:id])
     render :edit
   end
   def update
