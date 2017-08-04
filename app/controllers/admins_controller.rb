@@ -23,6 +23,14 @@ class AdminsController < ApplicationController
     @admin = Admin.edit
     render :edit
   end
+  def update
+    @admin = Admin.find(params[:id])
+    if @admin.update(admin_params)
+      redirect_to admins_path
+    else
+      render :edit
+    end
+  end
 
   private
   def admin_params
