@@ -3,4 +3,8 @@ class AdminsController < ApplicationController
     @admins = Admin.all
     render :index
   end
+  def show
+    @admin = Admin.find(params[:id])
+    render :show
+  end
 end
