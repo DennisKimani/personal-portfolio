@@ -3,7 +3,7 @@
 <ul>
   <% @admins.each do |admin| %>
   <h3>
-    <li><%= admin.title %></li>
+    <li><%= link_to admin.title, admin_path(admin) %></li>
   </h3>
   <p>
     <%= admin.description %>
