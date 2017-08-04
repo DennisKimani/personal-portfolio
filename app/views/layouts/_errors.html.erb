@@ -1,8 +1,8 @@
-<% if object.errors.any? %>
-    <h3>Please fix these errors:</h3>
-    <ul>
-      <% object.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
+<% if @admin.errors.any? %>
+<h3>An error was encountered. Please retry again.</h3>
+<ul>
+  <% @admin.errors.full_message.each do |message| %>
+  <li><%= message %></li>
   <% end %>
+</ul>
+<% end %>
