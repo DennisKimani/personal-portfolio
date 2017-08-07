@@ -3,4 +3,8 @@ class CodesController < ApplicationController
     @codes = Code.all
     render :index
   end
+  def show
+    @code =Code.find(params[:id])
+    render :show
+  end
 end
