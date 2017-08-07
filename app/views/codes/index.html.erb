@@ -2,6 +2,6 @@
 
 <ul>
   <% @codes.each do |code| %>
-  <li><%= code.skill %></li>
+  <li><%= link_to code.skill, code_path(code) %></li>
   <% end %>
 </ul>
