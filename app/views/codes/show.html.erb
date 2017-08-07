@@ -3,3 +3,6 @@
 <p><%= code.link %></p>
 
 <p><%= link_to "Return to codes", codes_path %></p>
+<p><%= link_to "Delete", code_path(@code),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
