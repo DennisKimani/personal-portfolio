@@ -23,6 +23,14 @@ class CodesController < ApplicationController
     @code = Code.find(params[:id])
     render :edit
   end
+  def update
+    @code = Code.find(params[:id])
+    if @code.update(code_params)
+      redirect_to codes_path
+    else
+      render :edit
+    end
+  end
 
   private
   def code_params
