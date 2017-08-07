@@ -1,9 +1,9 @@
-<%= render "layouts/errors", :object => @admin %>
+<%= render "codes/errors", :object => @code %>
 
-<%= form_for @admin do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :description %>
-<%= f.text_field :description %>
+<%= form_for @code do |f| %>
+<%= f.label :skill %>
+<%= f.text_field :skill %>
+<%= f.label :link %>
+<%= f.text_field :link %>
 <%= f.submit %>
 <% end %>
