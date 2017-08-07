@@ -7,4 +7,8 @@ class CodesController < ApplicationController
     @code =Code.find(params[:id])
     render :show
   end
+  def new
+    @code = Code.new
+    render :new
+  end
 end
