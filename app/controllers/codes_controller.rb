@@ -19,6 +19,10 @@ class CodesController < ApplicationController
       render :new
     end
   end
+  def edit
+    @code = Code.find(params[:id])
+    render :edit
+  end
 
   private
   def code_params
