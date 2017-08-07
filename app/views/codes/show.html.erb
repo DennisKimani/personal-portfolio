@@ -1,8 +1,9 @@
 <h2><%= @code.skill %></h2>
 
-<p><%= code.link %></p>
+<p><%= @code.link %></p>
 
-<p><%= link_to "Return to codes", codes_path %></p>
+<p><%=link_to "Edit", edit_code_path(@code) %></p>
 <p><%= link_to "Delete", code_path(@code),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
+<p><%= link_to "Return to codes", codes_path %></p>
