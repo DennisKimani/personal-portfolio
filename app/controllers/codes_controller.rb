@@ -31,6 +31,12 @@ class CodesController < ApplicationController
       render :edit
     end
   end
+  def destroy
+    @code = Code.find(params[:id])
+    @code.destroy
+    redirect_to codes_path
+  end
+end
 
   private
   def code_params
