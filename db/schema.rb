@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20170807193310) do
 
   create_table "codes", force: :cascade do |t|
     t.string "skill"
-    t.string "link"
   end
 
 end
