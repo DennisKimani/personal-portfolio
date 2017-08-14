@@ -1,5 +1,8 @@
 <h2><%= link.name %></h2>
 
-<li><%= link.description %></li> <li><%= link.github_link %><%= link.launch %></li>
-
+<p><%= link_to "Edit", edit_link_path(@link) %></p>
+<p><%= link_to "Delete", link_path(@link),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+                                   
 <p><%= link_to "Return to links", links_path %></p>
