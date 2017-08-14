@@ -37,6 +37,13 @@ class LinksController < ApplicationController
     end
   end
 
+  def destroy
+    @link = Link.find(params[:id])
+    @link.destroy
+    redirect_to links_path
+  end
+end
+
   private
   def link_params
     params.require(:link).permit(:name, :description, :github_link, :launch)
