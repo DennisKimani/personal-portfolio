@@ -23,7 +23,11 @@ class LinksController < ApplicationController
     end
   end
 
-
+  def edit
+    @link = Link.find(params[:id])
+    render :edit
+  end
+  
   private
   def link_params
     params.require(:link).permit(:name, :description, :github_link, :launch)
