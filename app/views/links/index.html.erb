@@ -5,3 +5,7 @@
     <li><strong><%= link_to link.name, link_path(link) %></strong><%= link.description %></li> <li><%= link.github_link %><%= link.launch %></li>
   <% end %>
 </ul>
+
+<hr>
+
+<%= link_to "New Link", new_link_path %>
