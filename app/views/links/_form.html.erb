@@ -1,7 +1,13 @@
-<%= render "codes/errors", :object => @code %>
+<%= render "links/errors", :object => @link %>
 
-<%= form_for @code do |f| %>
-<%= f.label :skill %>
-<%= f.text_field :skill %>
+<%= form_for @link do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :description %>
+<%= f.text_field :description %>
+<%= f.label :github_link %>
+<%= f.text_field :github_link %>
+<%= f.label :launch %>
+<%= f.text_field :launch %>
 <%= f.submit %>
 <% end %>
