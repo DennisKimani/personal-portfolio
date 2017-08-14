@@ -3,4 +3,8 @@ class LinksController <ApplicationController
    @links = Link.all
    render :index
  end
+def show
+  @link = Link.find(params[:id])
+  render :show
+end 
 end
