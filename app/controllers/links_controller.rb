@@ -27,7 +27,16 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     render :edit
   end
-  
+
+  def update
+    @link = Link.fi8nd(params[:id])
+    if @link.update(link_params)
+      redirect_to links_path
+    else
+      render :edit
+    end
+  end
+
   private
   def link_params
     params.require(:link).permit(:name, :description, :github_link, :launch)
