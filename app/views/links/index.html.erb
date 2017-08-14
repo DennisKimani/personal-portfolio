@@ -2,6 +2,6 @@
 
 <ul>
   <%= @links.each do |link| %>
-    <li><strong><%= link.name %></strong><%= link.description %></li> <li><%= link.github_link %><%= link.launch %></li>
+    <li><strong><%= link_to link.name, link_path(link) %></strong><%= link.description %></li> <li><%= link.github_link %><%= link.launch %></li>
   <% end %>
 </ul>
