@@ -5,6 +5,7 @@ class Links < ActiveRecord::Migration[5.1]
       t.column :description, :string
       t.column :github_link, :string
       t.column :launch, :string
+      t.column :code_id, :integer
 
       t.timestamps
     end
