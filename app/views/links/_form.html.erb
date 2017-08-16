@@ -1,6 +1,6 @@
-<%= render "links/errors", :object => @link %>
+<%= render "layouts/errors", :object => @link %>
 
-<%= form_for @link do |f| %>
+<%= form_for [@code, @link] do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
 <%= f.label :description %>
