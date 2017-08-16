@@ -1,8 +1,0 @@
-<% if @link.errors.any? %>
-<h3>An error was encountered. Please retry again.</h3>
-<ul>
-  <% @link.errors.full_message.each do |message| %>
-  <li><%= message %></li>
-  <% end %>
-</ul>
-<% end %>
