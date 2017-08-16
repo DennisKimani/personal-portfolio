@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170810191834) do
     t.string "description"
     t.string "github_link"
     t.string "launch"
+    t.integer "code_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
