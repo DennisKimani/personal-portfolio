@@ -10,14 +10,15 @@ class LinksController < ApplicationController
   end
 
   def new
-    @link = Link.new
-    render :new
+    @code = Code.find(params[:code_id])
+    @link = @code.links.new
   end
 
   def create
-    @link = Link.new(link_params)
+    @code = Code.find(params[:code_id])
+    @link = @code.links.new(link_params)
     if @link.save
-      redirect_to links_path
+      redirect_to code_path(@link.code)
     else
       render :new
     end
@@ -42,7 +43,6 @@ class LinksController < ApplicationController
     @link.destroy
     redirect_to links_path
   end
-end
 
   private
   def link_params
