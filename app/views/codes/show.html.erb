@@ -1,8 +1,26 @@
 <h2><%= @code.skill %></h2>
 
+  <% if @code.links.any? %>
+    <h4>Here are the links for this coding language:</h4>
 
-<p><%=link_to "Edit", edit_code_path(@code) %></p>
-<p><%= link_to "Delete", code_path(@code),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
-<p><%= link_to "Return to codes", codes_path %></p>
+    <ul>
+      <% @code.links.each do |link| %>
+        <li>
+          <strong><%= link.name %> :-</strong> <%= link.description %><%= link.github_link %><%= link.launch %> |
+          <%= link_to "Edit", edit_code_link_path(@code, link) %> |
+          <%= link_to "Delete", code_link_path(@code, link),
+                                   :data => {:confirm => "Are you sure?",
+                                                  :method => "delete"} %>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>There are no links yet!</p>
+  <% end %>
+
+  <p><%= link_to "Add a link", new_code_link_path(@code) %></p>
+  <p><%= link_to "Delete code", code_path(@code),
+                          :data => {:confirm => "Are you sure?",
+                                         :method => "delete"} %></p>
+
+  <p><%= link_to "Return to codes", codes_path %></p>
