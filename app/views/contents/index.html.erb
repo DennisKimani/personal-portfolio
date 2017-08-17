@@ -1,0 +1,16 @@
+<h1>My Personal Portfolio.</h1>
+
+<ul>
+  <% @contents.each do |content| %>
+  <h3>
+    <li><%= link_to content.title, content_path(content) %></li>
+  </h3>
+  <p>
+    <%= content.description %>
+  </p>
+  <% end %>
+</ul>
+
+<hr>
+
+<%= link_to "New content", new_content_path %>
