@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 20170810191834) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admins", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
-  end
-
   create_table "codes", force: :cascade do |t|
     t.string "skill"
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
   end
 
   create_table "links", force: :cascade do |t|

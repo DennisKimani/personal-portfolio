@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root :to => 'admins#index'
-  resources :admins
+  root :to => 'contents#index'
+  resources :contents
   resources :codes do
     resources :links
   end
