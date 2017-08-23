@@ -26,16 +26,15 @@
     <nav class="blue">
       <div class="nav-wrapper">
         <a href="/" class="brand-logo center">My Personal Portfolio.</a>
-        <!-- <a href="#" data-activates="mobile-demo" class="button-collapse">
-          <i class="material-icons">menu</i>
-        </a> -->
-        <ul class="side-nav" id="mobile-demo">
-          <li>
-            <a href="/">Home</a>
-          </li>
-        </ul>
+        <h5 class="codes right">
+          <%= link_to "Languages", codes_path %>
+        </h5>
+      </div>
+      <a href="<%= link_to "Return to codes", codes_path %>" class="brand-logo right">Languages</a>
+
       </div>
     </nav>
+
     <div class="container">
       <%= yield %>
     </div>
