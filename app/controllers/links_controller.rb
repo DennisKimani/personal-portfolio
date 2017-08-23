@@ -25,23 +25,25 @@ class LinksController < ApplicationController
   end
 
   def edit
+    @code = Code.find(params[:code_id])
     @link = Link.find(params[:id])
-    render :edit
   end
 
   def update
-    @link = Link.fi8nd(params[:id])
+    @code = Code.find(params[:code_id])
+    @link = @code.links.find(params[:id])
     if @link.update(link_params)
-      redirect_to links_path
+      redirect_to code_path(@link.code)
     else
       render :edit
     end
   end
 
   def destroy
-    @link = Link.find(params[:id])
+    @code = Code.find(params[:code_id])
+    @link = @code.links.find(params[:id])
     @link.destroy
-    redirect_to links_path
+    redirect_to @code
   end
 
   private
