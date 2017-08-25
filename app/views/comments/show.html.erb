@@ -1,0 +1,7 @@
+<p><%= @comment.comment %></p>
+<p><%=link_to "Edit", edit_comment_path(@comment) %></p>
+<p><%=link_to "Delete", comment_path(@comment),
+                        :data => {:confirm => "You sure?",
+                          :method => "delete"} %></p>
+
+<p><%= link_to "Comment", comments_path %></p>
