@@ -1,0 +1,18 @@
+<h2>Please add a comment.</h2>
+
+<ul>
+  <% @comments.each do |comment| %>
+  <h3>
+    <li><%= link_to comment.name, comment_path(comment) %></li>
+  </h3>
+  <p>
+    <%= comment.comment %>
+  </p>
+  <% end %>
+</ul>
+
+
+
+<hr>
+
+<%= link_to "Leave a comment", new_comment_path %>
