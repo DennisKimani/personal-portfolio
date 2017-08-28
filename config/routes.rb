@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :references
   root :to => 'contents#index'
   resources :contents
 
