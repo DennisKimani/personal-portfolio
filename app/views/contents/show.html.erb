@@ -1,8 +1,8 @@
 <h2><%= @content.title %></h2>
 
 <p><%= @content.description %></p>
-<p><%=link_to "Edit", edit_content_path(@content) %></p>
-<p><%=link_to "Delete", content_path(@content),
+<p><%#=link_to "Edit", edit_content_path(@content) %></p>
+<p><%#=link_to "Delete", content_path(@content),
                         :data => {:confirm => "You sure?",
                           :method => "delete"} %></p>
 
