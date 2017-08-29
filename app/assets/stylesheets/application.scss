@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+a:hover, a:focus{
+  text-decoration: none;
+  color: blue;
+  background: none;
+}
+.contact-me{
+  display: inline-flex;
+}
