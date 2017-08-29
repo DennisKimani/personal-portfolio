@@ -1,45 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Portfolio</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Navbar -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Portifolio</title>
     <%= csrf_meta_tags %>
-
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="/">Portfolio.</a>
-        </div>
-        <ul class="nav navbar-nav">
+    <nav class="light-blue">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Portfolio.</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><%= link_to"Languages", codes_path %></li>
           <li><%= link_to"Blog", comments_path %></li>
           <li><%= link_to"References", references_path %></li>
+          <% if current_user.nil? %>
           <li><%= link_to "Sign In", new_user_session_path %></li>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <% else %>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-
+          <% end %>
         </ul>
       </div>
     </nav>
@@ -49,5 +36,21 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
+    <hr>
+    <footer>
+      <div class="container">
+        <div class="row contact-me">
+          <div class="col md-3">
+            <a href="https://twitter.com/colekimani1" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/miu/24/circle_social-twitter-glyph-64.png" alt="twitter"></a>
+          </div>
+          <div class="col md-3">
+            <a href="https://www.linkedin.com/in/dennis-kimani-663831147/" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/peelicons-vol-1/50/LinkedIn-64.png" alt="linkedin"></a>
+          </div>
+          <div class="col md-3">
+            <a href="https://github.com/DennisKimani" target="_blank"><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/github-64.png" alt="github"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
