@@ -6,7 +6,7 @@
     <ul>
       <% @code.links.each do |link| %>
         <li>
-          <strong>Name:-</strong><%= link.name %> <br><strong>Description:-</strong> <%= link.description %> <br> <strong>Github_link:- </strong><%= link.github_link %> <br><strong>Launch:-</strong> <%= link.launch %> <br> 
+          <strong>Name:-</strong><%= link.name %> <br><strong>Description:-</strong> <%= link.description %> <br> <strong>Github_link:- </strong><a href="<%= link.github_link %>" target="_blank" style="color: blue;"><%= link.github_link %></a> <br><strong>Launch:-</strong><a href="<%= link.launch %>" target="_blank" style="color: blue;"><%= link.launch %></a> <br> 
           <%= link_to "Edit", edit_code_link_path(@code, link) %> |
           <%= link_to "Delete", code_link_path(@code, link),
                                    :data => {:confirm => "Are you sure?",
