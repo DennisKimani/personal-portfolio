@@ -1,5 +1,6 @@
 <h2>Please add a comment.</h2>
 
+<div class="comments" id="all_comments">
 <ul>
   <% @comments.each do |comment| %>
   <h3>
@@ -10,9 +11,10 @@
   </p>
   <% end %>
 </ul>
+</div>
 
 
 
 <hr>
 
-<%= link_to "Leave a comment", new_comment_path %>
+<%= link_to "Leave a comment", new_comment_path,id: "new_link", remote: true %>
