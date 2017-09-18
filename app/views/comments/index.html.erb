@@ -1,16 +1,15 @@
-<h2>Please add a comment.</h2>
+<h2>Please add a comment or suggestion.</h2>
 
 <div class="comments" id="all_comments">
-<ul>
+<ol>
   <% @comments.each do |comment| %>
-  <h3>
-    <li><%= link_to comment.name, comment_path(comment) %></li>
-  </h3>
   <p>
-    <%= comment.comment %>
+    <li><%= comment.name %> :- <%= comment.comment %> </li>
   </p>
+  <p><%=link_to "Edit", edit_comment_path(comment) %>|
+  <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   <% end %>
-</ul>
+</ol>
 </div>
 
 
