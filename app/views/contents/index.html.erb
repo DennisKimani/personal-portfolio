@@ -1,8 +1,4 @@
-<div class="images center">
-  <p style="font-size: 20px;">Please <%= link_to "Sign In", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %> to view projects and  please leave a comment.</p>
-  <%= image_tag "coder.jpg" %>
-</div>
-
+<div class="container">
 <ul>
   <% @contents.each do |content| %>
   <h3>
@@ -15,3 +11,4 @@
 </ul>
 
 <%= link_to "New content", new_content_path %>
+</div>

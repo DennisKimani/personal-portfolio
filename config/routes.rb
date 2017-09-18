@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :homes
   devise_for :users
   resources :references
-  root :to => 'contents#index'
+  root :to => 'homes#index'
   resources :contents
 
   resources :codes do
